@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Smart Air Quality Monitoring System</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<link rel="stylesheet"
+href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+</head>
+
+<body>
+
+<div class="topbar">
+
+<div class="logo-left">
+<img src="{{ url_for('static', filename='nit.png') }}">
+</div>
+
+<div class="title-area">
+
+<h1>SMART AIR QUALITY MONITORING SYSTEM</h1>
+
+<h3>National Institute of Technology Rourkela</h3>
+
+<div id="datetime"></div>
+
+</div>
+
+<div class="logo-right">
+<img src="{{ url_for('static', filename='ewarn.png') }}">
+</div>
+
+</div>
+
+<div class="menu">
+
+<button class="menu-btn">☰ Menu</button>
+
+<div class="menu-content">
+
+<a href="/dashboard">Dashboard</a>
+
+<a href="/login">Login</a>
+
+<a href="/signup">Signup</a>
+
+<a href="/download_csv">Download CSV</a>
+
+</div>
+
+</div>
+
+<div class="selectors">
+
+<select>
+<option>Odisha</option>
+</select>
+
+<select>
+<option>Rourkela</option>
+</select>
+
+<select>
+<option>Sector 1</option>
+<option>Sector 2</option>
+<option>Panposh</option>
+<option>Chhend</option>
+<option>Uditnagar</option>
+</select>
+
+</div>
+
+<div class="top-section">
+
+<div class="map-box">
+
+<h2>Monitoring Station Location</h2>
+
+<div id="map"></div>
+
+</div>
+
+<div class="aqi-box">
+
+<h2>AIR QUALITY INDEX</h2>
+
+<div class="gauge-container">
+
+<canvas id="gaugeChart"></canvas>
+
+<div id="aqiValue">0</div>
+
+</div>
+
+<div id="status">
+Waiting For Data
+</div>
+
+<div id="datetime"></div>
+
+<div id="aqiMessage"></div>
+
+<span id="lastUpdated"></span>
+
+<div class="station-info">
+
+<p>
+<b>Station:</b>
+Sector 1
+</p>
+
+<p>
+<b>Last Updated:</b>
+<span id="lastUpdated">
+--
+</span>
+</p>
+
+</div>
+
+<div class="legend">
+
+<h3>AQI Reference</h3>
+
+<p class="good">
+🟢 Good (0-50)
+</p>
+
+<p class="satisfactory">
+🟡 Satisfactory (51-100)
+</p>
+
+<p class="moderate">
+🟠 Moderate (101-200)
+</p>
+
+<p class="poor">
+🔴 Poor (201-300)
+</p>
+
+<p class="verypoor">
+🟣 Very Poor (301-400)
+</p>
+
+<p class="severe">
+⚫ Severe (401-500)
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="middle">
+
+<div class="stats">
+
+<h2>Min / Max / Avg Values</h2>
+
+<table>
+
+<tr>
+<th>Parameter</th>
+<th>Min</th>
+<th>Max</th>
+<th>Avg</th>
+</tr>
+
+<tr>
+<td>MQ2 Smoke</td>
+<td id="mq2min">0</td>
+<td id="mq2max">0</td>
+<td id="mq2avg">0</td>
+</tr>
+
+<tr>
+<td>MQ3 Alcohol</td>
+<td id="mq3min">0</td>
+<td id="mq3max">0</td>
+<td id="mq3avg">0</td>
+</tr>
+
+<tr>
+<td>MQ135 Air Quality</td>
+<td id="mq135min">0</td>
+<td id="mq135max">0</td>
+<td id="mq135avg">0</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="graph">
+
+<h2>Live Sensor Graph</h2>
+
+<canvas id="pollutantChart"></canvas>
+
+</div>
+
+</div>
+
+<div class="health">
+
+<h2>Health Impact & Precautions</h2>
+
+<table>
+
+<tr>
+<th>Parameter</th>
+<th>Good Range</th>
+<th>Poor Range</th>
+<th>Health Impact</th>
+<th>Precaution</th>
+</tr>
+
+<tr>
+<td>MQ2 Smoke</td>
+<td>0-100</td>
+<td>>300</td>
+<td>Eye Irritation</td>
+<td>Avoid Smoke Exposure</td>
+</tr>
+
+<tr>
+<td>MQ3 Alcohol</td>
+<td>0-100</td>
+<td>>300</td>
+<td>Headache / Dizziness</td>
+<td>Improve Ventilation</td>
+</tr>
+
+<tr>
+<td>MQ135 Air Quality</td>
+<td>0-100</td>
+<td>>300</td>
+<td>Respiratory Problems</td>
+<td>Wear Mask</td>
+</tr>
+
+</table>
+
+</div>
+
+<footer>
+
+<p>
+IoT Based Smart Air Quality Monitoring System
+</p>
+
+</footer>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>

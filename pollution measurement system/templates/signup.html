@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Signup</title>
+
+<style>
+
+body{
+font-family:Arial;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:#f2f6ff;
+}
+
+.box{
+background:white;
+padding:30px;
+width:320px;
+border-radius:12px;
+box-shadow:0 0 15px rgba(0,0,0,0.2);
+}
+
+h2{
+text-align:center;
+}
+
+input{
+width:100%;
+padding:10px;
+margin-top:10px;
+margin-bottom:10px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+button{
+width:100%;
+padding:10px;
+background:#0077b6;
+color:white;
+border:none;
+cursor:pointer;
+border-radius:5px;
+}
+
+button:hover{
+background:#005f8a;
+}
+
+p{
+text-align:center;
+margin-top:10px;
+}
+
+a{
+color:#0077b6;
+text-decoration:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Create Account</h2>
+
+<form action="/signup" method="POST">
+
+    <input type="email" name="email" placeholder="Enter Email" required>
+
+    <input type="password" name="password" placeholder="Create Password (e.g. 1234)" required>
+
+    <button type="submit">Sign Up</button>
+
+</form>
+
+<p>
+Already have an account? <a href="/login">Login</a>
+</p>
+
+</div>
+
+</body>
+</html>

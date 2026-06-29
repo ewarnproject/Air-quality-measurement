@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Login</title>
+
+<style>
+
+body{
+font-family:Arial;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:#f2f6ff;
+}
+
+.box{
+background:white;
+padding:30px;
+width:320px;
+border-radius:12px;
+box-shadow:0 0 15px rgba(0,0,0,0.2);
+}
+
+h2{
+text-align:center;
+}
+
+input{
+width:100%;
+padding:10px;
+margin-top:10px;
+margin-bottom:10px;
+}
+
+button{
+width:100%;
+padding:10px;
+background:#0077b6;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+button:hover{
+background:#005f8a;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Login</h2>
+
+<form action="/login" method="POST">
+
+    <input type="email" name="email" placeholder="Enter Email" required>
+
+    <input type="password" name="password" placeholder="Enter Password (e.g. 1234)" required>
+
+    <button type="submit">Login</button>
+
+</form>
+
+<br>
+
+<p style="text-align:center;">
+<a href="/signup">Create Account</a>
+</p>
+
+</div>
+
+</body>
+</html>
